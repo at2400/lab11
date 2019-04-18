@@ -7,9 +7,16 @@
 <h3>Professor Page</h3>
 <hr />
 <p>List of Professors:</p>
+<form method="post">
+    <label lass="control-label"></label>
+    <select asp-items="Model.ProfessorsDropDown" class="form-control">
+        <option value="">-- Select Professor --</option>
+        <option value=""><label asp-for="ID" class="control-label"></label></option>
+    </select>
+    <p><div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div></p>
+</form>
 
-<label lass="control-label"></label>
-<select asp-items="Model.ProfessorsDropDown" class="form-control">
-    <option value="">-- Select Professor --</option>
-</select>
-<p><input type="submit" value="Submit" /></p>
+<p>You chose Professor @Model.ID</p>
+
