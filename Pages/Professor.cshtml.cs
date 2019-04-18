@@ -14,24 +14,17 @@ namespace lab11_1.Pages
         private readonly ProfessorDbContext _context;
         public List<Professor> Professors {get; set;}
         public SelectList ProfessorsDropDown {get; set;}
-        public string CurrentProfessor {get; set;}
 
 
         public ProfessorModel(ProfessorDbContext context)
         {
             _context = context;
         }
-        public void OnGetAsync()
+        public void OnGet()
         {
             Professors = _context.Professor.ToList();
 
             ProfessorsDropDown = new SelectList(Professors, "ID", "FirstName", "LastName");
-
-            switch (CurrentProfessor)
-            {
-                case "Kareem":
-                    break;
-            }
         }
     }
 }
